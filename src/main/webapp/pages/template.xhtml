@@ -1,0 +1,52 @@
+<!DOCTYPE html [
+    <!ENTITY nbsp "&#160;">
+    <!ENTITY bull "&#8226;">
+    <!ENTITY copy "&#169;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	</f:facet>
+	<link rel="stylesheet" media="all" type="text/css" href="../css/style.css"/>
+	<title>Dynamic menu bar</title>
+	<ui:insert name="head" />
+</h:head>
+
+<h:body style="padding-top: 60px">
+
+	<b:navBar binding="#{menuViewBean.menu}" />
+
+
+	<b:container fluid="true">
+		<b:row>
+			<b:column col-sm="3" col-md="2" styleClass="sidebarLeft">
+				<b:panel>
+					<h:outputText value="Left Side content goes here" />
+				</b:panel>
+			</b:column>
+			<b:column col-sm="7" offset-sm="3" col-md="8" offset="2"
+				styleClass="main">
+				<h1>
+					<ui:insert name="title" />
+				</h1>
+				<div class="content-container">
+					<ui:insert name="content" />
+				</div>
+			</b:column>
+			<b:column col-sm="2" col-md="2" styleClass="sidebarRight">
+				<b:panel>
+					<h:outputText value="Right Side content goes here" />
+				</b:panel>
+			</b:column>
+		</b:row>
+	</b:container>
+</h:body>
+</html>
